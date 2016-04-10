@@ -1,0 +1,28 @@
+" Settings for Vimperator
+
+let g:plugin_loader_roots = "~/Documents/vimperator-plugins"
+let g:plugin_loader_plugins = "_libly,sbmcommentsviewer,feedSomeKeys_3"
+
+set ignorecase
+set smartcase
+
+set focuscontent
+
+set complete=sl
+
+autocmd LocationChange '^(?!https?://(mail\.google\.com/(mail|a)/|reader\.livedwango\.com/reader/|b\.hatena\.ne\.jp/(?!(entry|articles|guide))))' :set! browser.tabs.loadDivertedInBackground=false
+autocmd LocationChange '^https?://(mail\.google\.com/(mail|a)/|reader\.livedwango\.com/reader/|b\.hatena\.ne\.jp/(?!(entry|articles|guide)))' :set! browser.tabs.loadDivertedInBackground=true
+
+" lazy コマンドを定義
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+" livedoor reader で本来のキーボードショートカットを有効にする
+:lazy fmaps -u='reader\.livedwango\.com\/reader' j k s a p o v c i,p <Space> <S-Space> z b < > q w e,g
+" lazy fmaps -u='www\.tumblr\.com\/dashboard' j k . l n <CR> f x / <A-Tab> <A-c> <A-r> <A-e>
+lazy fmaps -e=vkeydown -u='www\.tumblr\.com/' j k r t q p n L l<CR>
+" let g:twittperator_use_ssl_connection_for_api_ep = 1
+" let g:twittperator_screen_name = "daichang0805"
+
+nnoremap ,c :viewSBMComments<CR>
+
+echo "setting vimperator"
+" vim: set ft=vimperator:
