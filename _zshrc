@@ -59,6 +59,10 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -d ~/.rbenv ]] && \
+	export PATH=${HOME}/.rbenv/bin:${PATH} && \
+	eval "$(rbenv init -)"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
