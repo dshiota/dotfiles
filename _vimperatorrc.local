@@ -22,7 +22,7 @@ lazy fmaps -e=vkeydown -u='www\.tumblr\.com/' j k r t q p n L l<CR>
 " let g:twittperator_use_ssl_connection_for_api_ep = 1
 " let g:twittperator_screen_name = "daichang0805"
 
-nnoremap ,c :viewSBMComments<CR>
+nnoremap ,c :viewSBMComments -t h<CR>
 
 echo "setting vimperator"
 " vim: set ft=vimperator:
