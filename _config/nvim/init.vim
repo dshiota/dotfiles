@@ -1,6 +1,6 @@
-if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+"if has('nvim')
+"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"endif
 
 "dein Scripts-----------------------------
 if &compatible
@@ -8,10 +8,10 @@ if &compatible
 endif
 
 " Required:
-set runtimepath^=dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=~/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin(expand('dein'))
+call dein#begin(expand('~/dein'))
 
 " Let dein manage dein
 " Required:
@@ -24,6 +24,8 @@ call dein#add('Shougo/neosnippet-snippets')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+call dein#add('JuliaLang/julia-vim')
+
 " Required:
 call dein#end()
 
@@ -31,10 +33,17 @@ call dein#end()
 filetype plugin indent on
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
+
+set background=light
+syntax on
+colorscheme desert
+set ts=2
+set sw=2
+set smartindent
 
 " vim: set ft=vim :
