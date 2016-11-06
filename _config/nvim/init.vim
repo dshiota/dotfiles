@@ -26,6 +26,8 @@ call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
 call dein#add('JuliaLang/julia-vim')
 
+call dein#add('Shougo/deoplete.nvim')
+
 " Required:
 call dein#end()
 
@@ -36,6 +38,8 @@ filetype plugin indent on
 if dein#check_install()
   call dein#install()
 endif
+
+let g:deoplete#enable_at_startup = 1
 
 "End dein Scripts-------------------------
 
