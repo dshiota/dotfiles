@@ -63,6 +63,9 @@ source $ZSH/oh-my-zsh.sh
 	export PATH=${HOME}/.rbenv/bin:${PATH} && \
 	eval "$(rbenv init -)"
 
+export PYENV_ROOT=/usr/local/var/pyenv
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -91,3 +94,11 @@ alias vim="/usr/local/bin/nvim"
 
 export XDG_CONFIG_HOME=$HOME/.config
 
+# load /etc/paths.d/
+PATHS_DIR=/etc/paths.d
+
+for file in ${PATHS_DIR}/*
+do
+	path_str=`cat ${file}`
+	export PATH="${PATH}:${path_str}"
+done
