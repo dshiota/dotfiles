@@ -13,6 +13,8 @@ set complete=sl
 autocmd LocationChange '^(?!https?://(mail\.google\.com/(mail|a)/|reader\.livedwango\.com/reader/|b\.hatena\.ne\.jp/(?!(entry|articles|guide))))' :set! browser.tabs.loadDivertedInBackground=false
 autocmd LocationChange '^https?://(mail\.google\.com/(mail|a)/|reader\.livedwango\.com/reader/|b\.hatena\.ne\.jp/(?!(entry|articles|guide)))' :set! browser.tabs.loadDivertedInBackground=true
 
+autocmd LocationChange localhost/notebooks	js modes.passAllKeys = true
+
 " lazy コマンドを定義
 command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
 " livedoor reader で本来のキーボードショートカットを有効にする
